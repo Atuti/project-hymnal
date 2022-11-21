@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SongsFragment">
+
+    <fragment
+        android:id="@+id/SongsFragment"
+        android:name="com.example.hymnalproject.SongsFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/songs_view_recycler">
+
+        <action
+            android:id="@+id/action_SongsFragment_to_SongFragment"
+            app:destination="@id/SongFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SongFragment"
+        android:name="com.example.hymnalproject.SongFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/song_view">
+
+        <action
+            android:id="@+id/action_SongFragment_to_SongsFragment"
+            app:destination="@id/SongsFragment" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+</navigation>
